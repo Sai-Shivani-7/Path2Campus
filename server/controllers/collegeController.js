@@ -20,8 +20,7 @@ exports.predictColleges = async (req, res) => {
 
     const query = {
       exam: exam || 'JoSAA',
-      category: category || 'OPEN',
-      closingRank: { $gte: rank * 0.5 } // Show some reach colleges (Dream)
+      category: category || 'OPEN'
     };
 
     if (gender) {
@@ -44,8 +43,8 @@ exports.predictColleges = async (req, res) => {
       };
     });
 
-    // Sort by probability (Safe first)
-    prediction.sort((a, b) => b.probability - a.probability);
+    // Sort by closing rank ascending (Absolute highest ranking colleges first)
+    prediction.sort((a, b) => a.closingRank - b.closingRank);
 
     res.json(prediction);
   } catch (err) {

@@ -49,7 +49,7 @@ const Results = () => {
           transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
           className="rounded-full h-16 w-16 border-t-4 border-blue-600 border-r-4 border-blue-100"
         />
-        <p className="mt-6 text-slate-500 font-bold animate-pulse">Analyzing 2,500+ cutoff records...</p>
+        <p className="mt-6 text-slate-500 font-bold animate-pulse">Analyzing 11,000+ cutoff records...</p>
       </div>
     );
   }
